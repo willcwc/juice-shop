@@ -30,18 +30,20 @@ Agora vamos adicionar a revisão de dependências (Dependency Review) para que, 
 ## Exercício 2 - Protegendo branches
 
 1. Adicione o usuário `@pedrolacerda` como colaborador do seu repositório
-   1. Para adicionar um novo colaborador, vá até a página de configurações do seu repositório (`Settings`), clique em `Collaborators and teams`, `Add people` e adicione o usuário `@pedrolacerda`
+   1. Para adicionar um novo colaborador, vá até a página de configurações do seu repositório (`Settings`), clique em `Collaborators`, `Add people` e adicione o usuário `pedrolacerda`
 2. Adicione um arquivo `CODEOWNERS` no repositório para que o usuário `@pedrolacerda` e o seu próprio usuário como donos do código. Para isso, crie um arquivo `CODEOWNERS` na raiz do repositório com o seguinte conteúdo:
    
    ```
-   * @pedrolacerda @<seu_usuario>
+   *     @pedrolacerda @<seu_usuario>
    ```
    
 3. Implemente a proteção do branch `master` para que ele só possa ser alterado por você
-   1. Coloque a proteção para que apenas você possa fazer o merge
-   2. Adicione a obrigação de ter um pull request para fazer o merge
-   3. Adicione a obrigação de ter pelo menos 1 revisor para fazer o merge
-   4. Convide o usuário `@pedrolacerda` para fazer o review
+   1. Para proteger o branch `master`, vá até a página de configurações do seu repositório (`Settings`), clique em `Branches` e selecione `Add branch protection rule`
+   2. Em `Branch name pattern` digite `master`
+   3. Marque o checkbox `Require pull request reviews before merging`
+   4. Marque `Require approvals` e selecione a opção `1`
+   5. Marque a opção `Dismiss stale pull request approvals when new commits are pushed`
+   6. Marque a opção `Require review from Code Owners`
 4. Adicione uma validação obrigatória para o CodeQL
    1. Marque o checkbox `Require status checks to pass before merging`, depois clique no checkbox `Require branches to be up to date before merging`.
    2. Na caixa de texto, busque por `CodeQL` e selecione a opção `CodeQL`
