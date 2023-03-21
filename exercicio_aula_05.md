@@ -7,6 +7,7 @@ Antes de começar faça um fork desse repositório para sua conta pessoal. Você
 Vamos ativar o GitHub Actions para que o código seja analisado a partir de um workflow. Para isso, siga os seguintes passos:
 
 1. Vá na aba `Actions` do seu repositório e clique no botão verde `I understand my workflows, go ahead and enable them`
+   1. :warning: Caso não apareça essa opção, siga para o próximo passo
 
 Em seguida vamos ativar o `Dependabot` para que as dependências do projeto sejam atualizadas automaticamente. Para isso, siga os seguintes passos:
 
@@ -29,13 +30,14 @@ Agora vamos adicionar a revisão de dependências (Dependency Review) para que, 
 
 ## Exercício 2 - Protegendo branches
 
-1. Adicione o usuário `@pedrolacerda` como colaborador do seu repositório
+1. Adicione o usuário `pedrolacerda` como colaborador do seu repositório
    1. Para adicionar um novo colaborador, vá até a página de configurações do seu repositório (`Settings`), clique em `Collaborators`, `Add people` e adicione o usuário `pedrolacerda`
 2. Adicione um arquivo `CODEOWNERS` no repositório para que o usuário `@pedrolacerda` e o seu próprio usuário como donos do código. Para isso, crie um arquivo `CODEOWNERS` na raiz do repositório com o seguinte conteúdo:
    
    ```
    *     @pedrolacerda @<seu_usuario>
    ```
+   - :warning: Não esqueça de substituir `<seu_usuario>` pelo seu usuário do GitHub
    
 3. Implemente a proteção do branch `master` para que ele só possa ser alterado por você
    1. Para proteger o branch `master`, vá até a página de configurações do seu repositório (`Settings`), clique em `Branches` e selecione `Add branch protection rule`
@@ -49,6 +51,6 @@ Agora vamos adicionar a revisão de dependências (Dependency Review) para que, 
    2. Na caixa de texto, busque por `Analyze` e selecione a opção `Analyze (javascript)`
    3. Isso fará com que os Pull Requests tenham, necessariamente, que avaliar se a aplicação não contém vulnerabilidades de Javascript e, caso tenha, bloqueia o merge
 5. Faça uma modificação no `README.md` (pode inserir qualquer texto) e faça o commit
-   1. :warning: Você pode criar um novo branch antes de fazer a ediçao do `README.md` ou criar um novo branch no momento do commit
+   1. :warning: **Você pode criar um novo branch antes de fazer a ediçao do `README.md` ou criar um novo branch no momento do commit**
 6. Crie um pull request para o branch `master` e adicione o usuário `@pedrolacerda` como revisor
-   1. :warning: Nos vimos como criar um pull request no exercício da aula 04. Não se esqueça de selecionar o seu próprio repositório como base para o pull request
+   1. :warning: **Nós vimos como criar um pull request no exercício da aula 04. Não se esqueça de selecionar o seu próprio repositório como base para o pull request**
